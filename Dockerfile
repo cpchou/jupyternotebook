@@ -14,6 +14,21 @@ RUN pip3 install pandas
 RUN pip3 install matplotlib
 RUN pip3 install jupyter
 RUN pip3 install yfinance
+RUN pip3 install bs4
+RUN pip3 install imgkit
+RUN pip3 install seaborn
+RUN dnf install wget -y
+RUN dnf install curl -y
+RUN cd /tmp
+RUN wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
+RUN tar -xzvf ta-lib-0.4.0-src.tar.gz
+RUN cd ta-lib
+RUN ./configure --prefix=/usr
+RUN wget install make -y
+RUN make
+RUN make install
+RUN pip3 install Ta-Lib
+
 
 
 RUN jupyter notebook --generate-config
