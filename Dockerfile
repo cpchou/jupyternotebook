@@ -19,7 +19,7 @@ RUN pip3 install imgkit
 RUN pip3 install seaborn
 RUN dnf install wget -y
 RUN dnf install curl -y
-RUN wget install make -y
+RUN dnf install make -y
 RUN cd /tmp
 RUN wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
 RUN tar -xzvf ta-lib-0.4.0-src.tar.gz
