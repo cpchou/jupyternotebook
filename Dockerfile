@@ -20,10 +20,8 @@ RUN pip3 install seaborn
 RUN dnf install wget -y
 RUN dnf install curl -y
 RUN dnf install make -y
-RUN cd /tmp
-RUN wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz
-RUN tar -xzvf ta-lib-0.4.0-src.tar.gz
-RUN cd ta-lib
+RUN cd /tmp; pwd; wget http://prdownloads.sourceforge.net/ta-lib/ta-lib-0.4.0-src.tar.gz; tar -xzvf ta-lib-0.4.0-src.tar.gz
+RUN cd /tmp/ta-lib; pwd; ./configure --prefix=/usr; make; make install; pip3 install Ta-Lib
 RUN pwd
 ##RUN ./configure --prefix=/usr
 ##RUN make
